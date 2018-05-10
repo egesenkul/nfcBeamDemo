@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements CreateNdefMessage
         // bu fonksiyon gönderilecek olan mesajı ve mesajın gönderilme tarihini oluşturuyor
         Time time = new Time();
         time.setToNow();
-        String text = ("GÖNDERİLME TARİHİ:" + time.format("%H:%M:%S") +" MESAJ İÇERİĞİ: "+ sendText.getText());
+        String text = (time.format("%H:%M:%S") +" "+ sendText.getText()+" ");
         NdefMessage msg = new NdefMessage(
             new NdefRecord[] { createMimeRecord(
                 "application/edu.cs4730.nfcdemo.beam", text.getBytes())
